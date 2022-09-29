@@ -1,6 +1,6 @@
 #include<iostream>
-
 using namespace std;
+
 class Node{
     public:
     int data;
@@ -57,20 +57,73 @@ class queue{
      }
      else return rear->data;
    }
-   void print(queue q){
-       queue temp=q;
-       while(!temp.empty()){
-         cout<<temp.peek()<<" ";
-         temp.pop();
+   void print(queue* q){
+       queue* temp=q;
+       while(!temp->empty()){
+         cout<<temp->peek()<<" ";
+         temp->pop();
        }
    }
 };
 int main(){
-    queue q;
-    q.push(5);
-    q.push(6);
-   q.push(8);
-    
-   q.pop();
+    queue* s = new queue();
+    int val;
+    do
+    {
+
+        cout << "1.Enter 1 for push" << endl;
+        cout << "2.Enter 2 for pop" << endl;
+        cout << "3.Enter 3 for checking that queue is empty or not " << endl;
+        cout << "4.Enter 4 for getting the data of peek element" << endl;
+        cout << "5.Enter 5 for getting the data of rear element"<< endl;
+        cout << "6.Enter 6 for exit" << endl;
+        cin >> val;
+        switch (val)
+        {
+        case 1:
+            {
+            int d;
+            cout << "Enter data for push:";
+            cin >> d;
+            s->push(d);
+            }
+            break;
+        case 2:
+            {
+            cout << "Poping.." << endl;
+            s->pop();
+            }
+            break;
+        case 3:
+            {
+            bool t1 = s->empty();
+            if (t1)
+            {
+                cout << "queue is empty" << endl;
+            }
+            else
+                cout << "queue is not empty" << endl;
+            }
+            break;
+        case 4:
+            {
+            int p = s->peek();
+            if (p == -1)
+                cout << "queue is empty" << endl;
+            else
+                cout << "The top element is : " << p << endl;
+            }
+            break;
+        case 5:
+         {
+            bool flag = s->empty();
+            if(flag) cout << "queue is empty" << endl;
+            else {
+               cout << "The rear element is : "<< s->back() << endl;
+            }
+         }
+        
+        }
+    } while (val != 6);
    
 }
