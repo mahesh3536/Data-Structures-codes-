@@ -1,37 +1,37 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-int binarysearch(int arr[], int size, int key){
-    int start=0;
-    int end=size-1;
-    int mid=start + (end-start)/2;
-    while (start<=end)
+int binarysearch(int arr[], int size, int key)
+{
+    int start = 0;
+    int end = size - 1;
+    int mid = start + (end - start) / 2;
+    while (start <= end)
     {
-        if (arr[mid]==key)
+        if (arr[mid] == key)
         {
             return mid;
         }
-       if (key>arr[mid])
-       {
-           start=mid+1;
-       }
-       else
-       {
-           end=mid-1;
-       }
-       
-       mid=start + (end-start)/2;
-        
+        if (key > arr[mid])
+        {
+            start = mid + 1;
+        }
+        else
+        {
+            end = mid - 1;
+        }
+
+        mid = start + (end - start) / 2;
     }
-  return -1;  
+    return -1;
 }
 int main()
 {
-    //cout<<"hello world";
-    int even[6]={2,4,6,8,10,12};
-    
-    int index=binarysearch(even, 6, 12);
-    cout<<"The index of 12 is "<<index<<endl;
+    // cout<<"hello world";
+    int even[6] = {2, 4, 6, 8, 10, 12};
+
+    int index = binarysearch(even, 6, 12);
+    cout << "The index of 12 is " << index << endl;
 }
 /*
 int firstocr(int arr[], int size, int key){
@@ -42,9 +42,9 @@ int firstocr(int arr[], int size, int key){
     while (start<=end)
     {
         if (arr[mid]==key)
-        {   
+        {
            ans=mid;
-           end=mid-1; 
+           end=mid-1;
         }
        if (key>arr[mid])
        {
@@ -54,11 +54,11 @@ int firstocr(int arr[], int size, int key){
        {
            end=mid-1;
        }
-       
+
        mid=start + (end-start)/2;
-        
+
     }
-  return ans;  
+  return ans;
 }
 pair<int, int> firstAndLastPosition(vector<int>& arr, int n, int k)
 {
@@ -81,9 +81,9 @@ public:
                e=mid;
            }
            mid = s + (e-s)/2;
-           
+
        }
-      return s; 
+      return s;
     }
 };*/
 /*int getPivot(int arr[],int n){
@@ -100,11 +100,11 @@ public:
         {
             e=mid;
         }
-        
-       mid = s + (e-s)/2; 
+
+       mid = s + (e-s)/2;
     }
     return s;
-    
+
 }
 int main(int argc, char const *argv[])
 {
@@ -126,11 +126,11 @@ int getPivot(vector<int>& arr,int n){
         {
             e=mid;
         }
-        
-       mid = s + (e-s)/2; 
+
+       mid = s + (e-s)/2;
     }
     return s;
-    
+
 }
 int binarysearch(int arr[], int s, int e, int key){
     int start=s;
@@ -150,11 +150,11 @@ int binarysearch(int arr[], int s, int e, int key){
        {
            end=mid-1;
        }
-       
+
        mid=start + (end-start)/2;
-        
+
     }
-  return -1;  
+  return -1;
 }
 int findPosition(vector<int>& arr, int n, int k)
 {
@@ -167,8 +167,8 @@ int findPosition(vector<int>& arr, int n, int k)
    {
        return binarysearch(arr,0,pivot-1,k);
    }
-   
-   
+
+
 }*/
 // long long int sqrtInteger(int n){
 //     int s=0;
@@ -191,8 +191,8 @@ int findPosition(vector<int>& arr, int n, int k)
 //         {
 //             e=mid-1;
 //         }
-        
-//        mid = s + (e-s)/2; 
+
+//        mid = s + (e-s)/2;
 //     }
 //     return ans;
 // }
@@ -204,9 +204,9 @@ int findPosition(vector<int>& arr, int n, int k)
 //         factor = factor/10;
 //         for (double j = ans ; j*j < n ; j=j+factor)
 //         {
-//            ans = j; 
+//            ans = j;
 //         }
-        
+
 //     }
 //     return ans;
 // }
@@ -220,8 +220,3 @@ int findPosition(vector<int>& arr, int n, int k)
 //     cout<<moreprecise(n,4,tempsol);
 //     return 0;
 // }
-
-
-
-
-
