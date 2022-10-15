@@ -103,11 +103,5 @@ int main()
     root = buildtree(root);
     // 1 3 7 -1 -1 11 -1 -1 5 17 -1 -1 -1
     levelordertraversal(root);
-    vector<int> v;
-    sum1(root, v);
-    int size = v.size();
-    for (int i = 0; i < size; i++)
-    {
-        cout << v[i] << " ";
-    }
+
 }

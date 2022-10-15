@@ -193,7 +193,7 @@ node *insertinbst(node *&root, int d)
     }
     return root;
 }
-1 void takeinput(node *&root)
+ void takeinput(node *&root)
 {
     int data;
     cin >> data;
