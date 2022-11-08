@@ -221,13 +221,13 @@ node *maxvalueinbst(node *&root)
     }
     return temp;
 }
-node *deletefrombst(node *&root, int val)
+node *deletefrombst(node* root, int val)
 {
     if (root == NULL)
     {
         return root;
     }
-    if (root->data == val)
+    else if (root->data == val)
     {
         if (root->left == NULL && root->right == NULL)
         {
@@ -248,9 +248,9 @@ node *deletefrombst(node *&root, int val)
         }
         else
         {
-            int temp = minvalueinbst(root->right)->data;
-            root->data = temp;
-            root->right = deletefrombst(root->right, temp);
+            int mini = minvalueinbst(root->right) -> data;
+            root->data = mini;
+            root->right = deletefrombst(root->right, mini);
             return root;
         }
     }
@@ -264,13 +264,30 @@ node *deletefrombst(node *&root, int val)
     }
 }
 // inorder traaversal in bst all ways comes in sorting manner
-int main()
+bool searchInBst(node *root, int key)
 {
-    node *root = NULL;
-    cout << "Enter data to create" << endl;
-    buildtree(root);
-    cout << "Printing the BST" << endl;
-    levelordertraversal(root);
+    if (root == NULL)
+        return false;
+    if (root->data == key)
+        return true;
+    else if (key < root->data)
+    {
+        return searchInBst(root->left, key);
+    }
+    else
+    {
+        return searchInBst(root->right, key);
+    }
+}
+int main()
+
+{  int data;
+    node* root;
+    while(data!=-1){
+        cin>>data;
+        insertinbst(root,data);
+    }
+    inorder(deletefrombst(root,20));
     // cout<<endl;
     //  inorder(root);
     //  cout<<endl;
@@ -298,12 +315,5 @@ int main()
     //    {
     //         cout<<v1[i]<<" ";
     //    }
-    vector<int> v;
-    sum1(root, v);
-    int size = v.size();
-    for (int i = 0; i < size; i++)
-    {
-        cout << v[i] << " ";
-    }
-    return 0;
+    
 }
