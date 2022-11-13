@@ -35,7 +35,7 @@ public:
     void bfs(int);
     void dfs(int);
     void dfs(int,int []);
-    
+    void prim_algorithm();
 };
 void graph ::  bfs(int src){
      int vis[nodes] = {0};
